@@ -1,0 +1,5 @@
+# Generated from the combos section of randomcontainers/mediainfo package.yml by randomcontainers/ci.
+# Do not edit; change package.yml in randomcontainers/mediainfo instead.
+name: mediainfo-ffmpeg
+owner: mediainfo
+with: [ffmpeg]
