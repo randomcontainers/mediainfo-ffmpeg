@@ -12,7 +12,7 @@ These are unofficial builds, not affiliated with or endorsed by the upstream pro
 docker run --rm --user "$(id -u):$(id -g)" -v "$PWD:/work" ghcr.io/randomcontainers/mediainfo-ffmpeg input.mkv
 ```
 
-The same images can also be pulled as `randomcontainers.com/mediainfo-ffmpeg`. The examples in the [mediainfo README](https://github.com/randomcontainers/mediainfo#readme) work with this image too.
+The examples in the [mediainfo README](https://github.com/randomcontainers/mediainfo#readme) work with this image too.
 
 ## Tags
 
