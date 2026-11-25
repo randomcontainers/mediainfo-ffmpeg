@@ -58,7 +58,16 @@ gh attestation verify oci://ghcr.io/randomcontainers/mediainfo-ffmpeg:latest \
   --repo randomcontainers/mediainfo-ffmpeg --signer-repo randomcontainers/ci
 ```
 
-Images from `ghcr.io/randomcontainers/mediainfo` are built in [randomcontainers/mediainfo](https://github.com/randomcontainers/mediainfo), so verify them with `--repo randomcontainers/mediainfo --signer-repo randomcontainers/ci`.
+Each image also has a keyless cosign signature from the same workflow, for admission controllers that check cosign signatures:
+
+```sh
+cosign verify ghcr.io/randomcontainers/mediainfo-ffmpeg:latest \
+  --certificate-identity https://github.com/randomcontainers/ci/.github/workflows/build.yml@refs/tags/v1 \
+  --certificate-oidc-issuer https://token.actions.githubusercontent.com \
+  --certificate-github-workflow-repository randomcontainers/mediainfo-ffmpeg
+```
+
+Images from `ghcr.io/randomcontainers/mediainfo` are built in [randomcontainers/mediainfo](https://github.com/randomcontainers/mediainfo), so name that repository in `--repo` and `--certificate-github-workflow-repository`.
 
 ## Updates
 
