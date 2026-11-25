@@ -58,7 +58,7 @@ gh attestation verify oci://ghcr.io/randomcontainers/mediainfo-ffmpeg:latest \
   --repo randomcontainers/mediainfo-ffmpeg --signer-repo randomcontainers/ci
 ```
 
-Each image also has a keyless cosign signature from the same workflow, for admission controllers that check cosign signatures:
+Images published since November 2026 also have a keyless cosign signature from the same workflow, for admission controllers that check cosign signatures. Tags last built before then have only the attestation.
 
 ```sh
 cosign verify ghcr.io/randomcontainers/mediainfo-ffmpeg:latest \
@@ -67,7 +67,7 @@ cosign verify ghcr.io/randomcontainers/mediainfo-ffmpeg:latest \
   --certificate-github-workflow-repository randomcontainers/mediainfo-ffmpeg
 ```
 
-Images from `ghcr.io/randomcontainers/mediainfo` are built in [randomcontainers/mediainfo](https://github.com/randomcontainers/mediainfo), so name that repository in `--repo` and `--certificate-github-workflow-repository`.
+Images from `ghcr.io/randomcontainers/mediainfo` are built in [randomcontainers/mediainfo](https://github.com/randomcontainers/mediainfo), so use `randomcontainers/mediainfo` in `--repo` and `--certificate-github-workflow-repository`.
 
 ## Updates
 
